@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import at.favre.lib.crypto.bcrypt.BCrypt;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -17,13 +19,16 @@ public class UserController {
 
     @PostMapping("/")
     public ResponseEntity create(@RequestBody UserModel userModel) {
-        var userExists = this.userRepository.findByUsername(userModel.getUsername());
+        UserModel userExists = this.userRepository.findByUsername(userModel.getUsername());
         if (userExists != null) {
             System.err.println("username existente");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuário ja existe.");
         }
 
-        var userCreated = this.userRepository.save(userModel);
+        String hashedPassword = BCrypt.withDefaults().hashToString(12, userModel.getPassword().toCharArray());
+        userModel.setPassword(hashedPassword);
+
+        UserModel userCreated = this.userRepository.save(userModel);
         return ResponseEntity.status(HttpStatus.CREATED).body(userCreated);
     }
 }
