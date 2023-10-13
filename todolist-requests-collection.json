@@ -1,0 +1,108 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "todolist-spring",
+    "dateExported": "2023-10-13T04:08:25.356Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "52925b1d-8ea8-4133-be2a-7952ce967b0f",
+            "colId": "1e910816-2e89-4c12-953c-0f99444ccf6a",
+            "containerId": "",
+            "name": "POST /tasks/",
+            "url": "http://localhost:8080/tasks/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-10-12T23:29:21.623Z",
+            "modified": "2023-10-13T00:24:26.853Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"minha tarefa\",\n  \"description\": \"essa tarefa é muito simples\",\n  \"priority\": \"ALTA\",\n  \"startAt\": \"2023-11-02T12:00:00\",\n  \"endAt\": \"2023-11-02T16:30:00\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "apaulino",
+                    "password": "senha321"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "36381a7e-0149-4904-8577-f2143e734dfb",
+            "colId": "1e910816-2e89-4c12-953c-0f99444ccf6a",
+            "containerId": "",
+            "name": "GET /tasks/",
+            "url": "http://localhost:8080/tasks/",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-10-12T23:30:00.336Z",
+            "modified": "2023-10-12T23:35:21.106Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "vapo",
+                    "password": "senha321"
+                }
+            },
+            "tests": []
+        },
+        {
+            "_id": "bce262a1-d0b4-490e-931d-49e6c7efe3f9",
+            "colId": "1e910816-2e89-4c12-953c-0f99444ccf6a",
+            "containerId": "",
+            "name": "POST /users/",
+            "url": "http://localhost:8080/users/",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-10-12T23:29:37.039Z",
+            "modified": "2023-10-13T00:24:13.165Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"apaulino\",\n  \"password\": \"senha321\",\n  \"name\": \"Andre Paulino\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "48e13ae4-173f-4165-9f45-070787d90eff",
+            "colId": "1e910816-2e89-4c12-953c-0f99444ccf6a",
+            "containerId": "",
+            "name": "PUT /tasks/{id}",
+            "url": "http://localhost:8080/tasks/281bf23a-c3ec-40c0-bf65-2eda93aead6a",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2023-10-13T00:16:26.542Z",
+            "modified": "2023-10-13T03:34:31.121Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "id",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"vapo\",\n  \"description\": \"essa tarefa é muito simples\",\n  \"priority\": \"ALTA\",\n  \"startAt\": \"2023-11-02T12:00:00\",\n  \"endAt\": \"2023-11-02T16:30:00\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "basic",
+                "basic": {
+                    "username": "apaulino",
+                    "password": "senha321"
+                }
+            },
+            "tests": []
+        }
+    ]
+}
