@@ -1,14 +1,14 @@
-FROM ubuntu:latest AS build
+FROM eclipse-temurin:11-jdk-jammy AS build
 
-RUN apt-get update
-RUN apt-get install openjdk-11-jdk -y
+# RUN apt-get update
+# RUN apt-get install openjdk-11-jdk -y
 
 COPY . .
 
-RUN apt-get install maven -y
-RUN mvn clean install
+# RUN apt-get install maven -y
+# RUN mvn clean install
 
-FROM openjdk:11-jdk-slim
+# FROM openjdk:11-jdk-slim
 
 EXPOSE 8080
 
