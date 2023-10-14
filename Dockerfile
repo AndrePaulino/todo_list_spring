@@ -1,10 +1,16 @@
-FROM eclipse-temurin:11-jdk-jammy AS build
-VOLUME /tmp
+FROM ubuntu:latest AS build
 
-COPY target/*.jar app.jar
+RUN apt-get update
+RUN apt-get install openjdk-11-jdk -y
+COPY . .
 
-# FROM eclipse-temurin:11-jdk-jammy
+RUN apt-get install maven -y
+RUN mvn clean install
+
+FROM openjdk:11-jdk-slim
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+COPY --from=build /target/todolist-1.0.0.jar app.jar
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
